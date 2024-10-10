@@ -1,0 +1,77 @@
+.\" Manpage for sysopctl
+.TH SYOPCTL 1 "October 2023" "1" "System Operations Control"
+.SH NAME
+sysopctl \- System Operations Control script
+.SH SYNOPSIS
+.B sysopctl
+[\fIcommand\fR] [\fIoptions\fR]
+.SH DESCRIPTION
+The
+.B sysopctl
+script provides a command-line interface for managing system services, monitoring system load, checking disk usage, analyzing logs, and performing backups.
+
+.SH COMMANDS
+.TP
+.B service list
+List all active services.
+.TP
+.B service start \fI<name>\fR
+Start the specified service.
+.TP
+.B service stop \fI<name>\fR
+Stop the specified service.
+.TP
+.B system load
+Show the current system load.
+.TP
+.B disk usage
+Show disk usage in a human-readable format.
+.TP
+.B process monitor
+Open the process monitor (htop).
+.TP
+.B logs analyse
+Analyze system logs using journalctl.
+.TP
+.B backup \fI<source> <dest>\fR
+Backup the specified source path to the destination using rsync.
+
+.SH OPTIONS
+.TP
+.B --help
+Display help information and usage.
+.TP
+.B --version
+Display version information.
+
+.SH EXAMPLES
+To list all services:
+.B sysopctl service list
+
+To start a service:
+.B sysopctl service start <service-name>
+
+To stop a service:
+.B sysopctl service stop <service-name>
+
+To check system load:
+.B sysopctl system load
+
+To check disk usage:
+.B sysopctl disk usage
+
+To monitor processes:
+.B sysopctl process monitor
+
+To analyze logs:
+.B sysopctl logs analyse
+
+To back up a directory:
+.B sysopctl backup /path/to/source /path/to/destination
+
+.SH AUTHOR
+Written by Shubham Dahiya (21148).
+
+.SH COPYRIGHT
+This is free software; see the source for copying conditions. There is no warranty; not even for merchantability or fitness for a particular purpose.
+
